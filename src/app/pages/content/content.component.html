@@ -1,12 +1,68 @@
-<p>content works!</p>
-<div class="row bg-warning">
-    <div class="card bg-danger ">
-        <div class="card-body">
-            sdalicasbcka
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <input class="form-control" type="text" placeholder="search..." name="aname"
+                            [(ngModel)]="animal">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary" (click)="getImage()">
+                            search
+                        </button>
+                    </div>
+                    <div class="col-12 border mt-4 mx-2">
+
+                        <form class="row mt-3" #f="ngForm">
+                            <div class="col-sm-4 my-1 border-right">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <input type="text" class="form-control" name="tg" [(ngModel)]="newTag"
+                                            placeholder="tag the animal...">
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="btn btn-primary" (click)="add()">add</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul>
+                                            <li *ngFor="let item of tags">{{item.tag}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <div class="custom-file mb-3">
+                                            <input type="file" class="custom-file-input" id="validatedCustomFile"
+                                                (change)="fileupload($event)" required>
+                                            <label class="custom-file-label" for="validatedCustomFile">Choose
+                                                file...</label>
+                                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 border-top py-2">
+                                <button class="btn btn-primary" (click)="upload(); f.reset()">submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <mat-card>Simple card</mat-card>
-
-
-
+</div>
+<div class="row">
+    <div class="col" *ngFor="let item of animalsArr">
+        <div class="card">
+            <img [src]="item.url" class="card-img-top">
+            <div class="card-body">
+                <p class="card-text"><strong>TAGS:</strong><span *ngFor="let tag of item.tags">#{{tag}} </span></p>
+            </div>
+        </div>
+    </div>
 </div>

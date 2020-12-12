@@ -2,29 +2,40 @@
     <form class="form-signin mt-5">
         <div class="card shadow">
             <div class="card-body">
-                <!-- <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-                <div class="my-4" width="72" height="72"> <i
-                        class="fas fa-american-sign-language-interpreting fa-9x"></i></div>
+                <div class="row">
+                    <!-- <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+                    <div class="col-12 my-4" width="72" height="72"> <i
+                            class="fas fa-american-sign-language-interpreting fa-9x"></i></div>
 
-                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <mat-form-field class="example-full-width">
-                    <input matInput type="email" placeholder="Email">
-                </mat-form-field>
-                <mat-form-field class="example-full-width">
-                    <input matInput type="password" placeholder="Password">
-                </mat-form-field>
+                    <h1 class=" col-12 h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                    <form class="col-12 text-left" #f="ngForm" (ngSubmit)="submit(f)">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" #em name="em"
+                                placeholder="Email" [(ngModel)]="email" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" #pss name="pss"
+                                placeholder="Password" [(ngModel)]="password">
+                        </div>
+
+                    </form>
 
 
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button mat-button>Sign in</button>
 
-                <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
-                <div class="mt-5 mb-3 p-0 ">
-                    <p class=" text-muted">&copy; 2017-2019</p>
+                    <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
+                    <div class="col-12 text-center mb-4">
+                        <button type="submit" class="btn btn-secondary" (click)="submit(f)">Sign In</button>
+
+                    </div>
+                    <div class="col-12 text-center">
+
+                        <p class=" text-muted">&copy; 2017-2019</p>
+                    </div>
                 </div>
             </div>
         </div>
