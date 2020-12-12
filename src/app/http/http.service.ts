@@ -12,7 +12,7 @@ export class HttpService {
 
   constructor(private _http: HttpClient) {
     // this.ApiUrl = "http://40.65.188.86:8090/api/";
-    this.ApiUrl = "http://localhost:8090/api/";
+    this.ApiUrl = "/api/";
   }
   private getHeader() {
     let httpOptions = {
