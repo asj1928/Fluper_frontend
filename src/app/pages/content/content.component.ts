@@ -21,7 +21,7 @@ export class ContentComponent implements OnInit {
     // this.newTag = "sasa"
   }
   tags = [];
-  newTag = "ads"
+  newTag = ""
 
   ngOnInit() {
   }
